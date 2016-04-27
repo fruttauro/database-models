@@ -3,9 +3,10 @@
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 	xmlns:dc= "http://purl.org/dc/elements/1.1/" 
+	xml:base="http://www.example.com/ehealth"
 	xmlns:ehealth="http://www.example.com/ehealth#">
 
-	<ehealth:Address rdf:about="address?id=123">
+	<ehealth:Address rdf:about="Address">
 		<ehealth:LineOne>123</ehealth:LineOne>
 		<ehealth:LineTwo>A Street</ehealth:LineTwo>
 		<ehealth:City>Cityplace</ehealth:City>
@@ -13,137 +14,184 @@
 		<ehealth:Postcode>C171ES</ehealth:Postcode>
 	</ehealth:Address>
 
-	<ehealth:Person rdf:about="person">
-		<ehealth:Title></ehealth:Title>
-		<ehealth:Forename></ehealth:Forename>
+	<rdfs:Class rdf:about="Person"/>
+	
+	<ehealth:Patient rdf:about="Patient">
+		<rdfs:subClassOf rdf:resource="Person"/>
+		<ehealth:Title>Mr</ehealth:Title>
+		<ehealth:Forename>Patient</ehealth:Forename>
 		<ehealth:OtherNames></ehealth:OtherNames>
-		<ehealth:Surname></ehealth:Surname>
-	</ehealth:Person>
-
-	<ehealth:Patient rdf:about="patient?id=998">
-		<rdfs:subClassOf rdf:resource="person"/>
-		<ehealth:Address rdf:resource="address?id=123"/>
+		<ehealth:Surname>Guy</ehealth:Surname>
+		<ehealth:Address rdf:resource="Address"/>
 	</ehealth:Patient>
 
-	<ehealth:Gp rdf:about="gp?id=1235">
-		<rdfs:subClassOf rdf:resource="person"/>
+	<ehealth:Gp rdf:about="gp">
+		<ehealth:Title>Dr</ehealth:Title>
+		<ehealth:Forename>Doctor</ehealth:Forename>
+		<ehealth:OtherNames></ehealth:OtherNames>
+		<ehealth:Surname>Guy</ehealth:Surname>
+		<rdfs:subClassOf rdf:resource="Person"/>
 	</ehealth:Gp>
 
-	<ehealth:Specialist rdf:about="specialist?id=1235">
-		<rdfs:subClassOf rdf:resource="person"/>
+	<ehealth:Specialist rdf:about="Specialist">
+		<ehealth:Title>Dr</ehealth:Title>
+		<ehealth:Forename>Miss</ehealth:Forename>
+		<ehealth:OtherNames></ehealth:OtherNames>
+		<ehealth:Surname>Specialist</ehealth:Surname>
+		<rdfs:subClassOf rdf:resource="Person"/>
 	</ehealth:Specialist>
 
-	<ehealth:Location rdf:about="location">
-	</ehealth:Location>
+	<rdfs:Class rdf:about="Location"/>
 
-	<ehealth:Surgery rdf:about="surgery?id=913">
-		<rdfs:subClassOf rdf:resource="location"/>
-		<ehealth:Address rdf:resource="address?id=123"/>
+	<ehealth:Surgery rdf:about="Surgery">
+		<rdfs:subClassOf rdf:resource="Location"/>
+		<ehealth:Address rdf:resource="Address"/>
+		<dc:Title>A Surgery</dc:Title>
+		<ehealth:Address rdf:resource="Address"/>
+		<ehealth:ContactNo>00000000000</ehealth:ContactNo>
+		<ehealth:Email>email@email.com</ehealth:Email>
 	</ehealth:Surgery>
 
-	<ehealth:Hospital rdf:about="hospital?id=233">
-		<rdfs:subClassOf rdf:resource="location"/>
-		<ehealth:Address rdf:resource="address?id=123"/>
+	<ehealth:Hospital rdf:about="Hospital">
+		<rdfs:subClassOf rdf:resource="Location"/>
+		<ehealth:Address rdf:resource="Address"/>
+		<dc:Title>A Hospital</dc:Title>
+		<ehealth:Address rdf:resource="Address"/>
+		<ehealth:ContactNo>00000000000</ehealth:ContactNo>
+		<ehealth:Email>email@email.com</ehealth:Email>
 	</ehealth:Hospital>
 
-	<ehealth:Lab rdf:about="lab?id=1337">
-		<rdfs:subClassOf rdf:resource="location"/>
-		<ehealth:Address rdf:resource="address?id=123"/>
+	<ehealth:Lab rdf:about="Lab">
+		<rdfs:subClassOf rdf:resource="Location"/>
+		<ehealth:Address rdf:resource="Address"/>
+		<dc:Title>A Lab</dc:Title>
+		<ehealth:Address rdf:resource="Address"/>
+		<ehealth:ContactNo>00000000000</ehealth:ContactNo>
+		<ehealth:Email>email@email.com</ehealth:Email>
 	</ehealth:Lab>
 
-	<ehealth:Device rdf:about="device">
-		<ehealth:SerialNumber></ehealth:SerialNumber>
-		<ehealth:DateRegistered></ehealth:DateRegistered>
-	</ehealth:Device>
+	<rdfs:Class rdf:about="Device"/>
 
-	<ehealth:ActivityMonitor rdf:about="activitymonitor?id=55">
-		<rdfs:subClassOf rdf:resource="device"/>
+	<ehealth:ActivityMonitor rdf:about="ActivityMonitor">
+		<rdfs:subClassOf rdf:resource="Device"/>
+		<ehealth:SerialNumber>ADEVICE-1</ehealth:SerialNumber>
+		<ehealth:DateRegistered>22-09-09</ehealth:DateRegistered>
+		<ehealth:ActivityReading rdf:resource="ActivityReading"/>
 	</ehealth:ActivityMonitor>
 
-	<ehealth:BloodGlucoseMonitor rdf:about="bloodglucosemonitor?id=55">
-		<rdfs:subClassOf rdf:resource="device"/>
+	<ehealth:BloodGlucoseMonitor rdf:about="BloodGlucoseMonitor">
+		<rdfs:subClassOf rdf:resource="Device"/>
+		<ehealth:SerialNumber>ADEVICE-12</ehealth:SerialNumber>
+		<ehealth:DateRegistered>22-09-09</ehealth:DateRegistered>
+		<ehealth:BloodGlucoseReading rdf:resource="BloodGlucoseReading"/>
 	</ehealth:BloodGlucoseMonitor>
 
-	<ehealth:WeighingScales rdf:about="weighingscales?id=55">
-		<rdfs:subClassOf rdf:resource="device"/>
+	<ehealth:WeighingScales rdf:about="WeighingScales">
+		<rdfs:subClassOf rdf:resource="Device"/>
+		<ehealth:SerialNumber>ADEVICE-13</ehealth:SerialNumber>
+		<ehealth:DateRegistered>22-09-09</ehealth:DateRegistered>
+		<ehealth:WeightReading rdf:resource="WeightReading"/>
 	</ehealth:WeighingScales>
 
-	<ehealth:Vaccination rdf:about="vaccination?id=478">
+	<rdfs:Class rdf:about="DeviceReading"/>
+
+	<ehealth:ActivityReading rdf:about="ActivityReading">
+		<rdfs:subClassOf rdf:resource="DeviceReading"/>
+		<ehealth:Timestamp>2002-05-30T09:00:00</ehealth:Timestamp>
+		<ehealth:StepCount>14568</ehealth:StepCount>
+		<ehealth:AverageBpm>76</ehealth:AverageBpm>
+		<ehealth:Duration>PT1H</ehealth:Duration>
+	</ehealth:ActivityReading>
+
+	<ehealth:WeightReading rdf:about="WeightReading">
+		<rdfs:subClassOf rdf:resource="DeviceReading"/>
+		<ehealth:Timestamp>2002-05-30T09:00:00</ehealth:Timestamp>
+		<ehealth:WeightKg>78</ehealth:WeightKg>
+	</ehealth:WeightReading>
+
+	<ehealth:BloodGlucoseReading rdf:about="BloodGlucoseReading">
+		<rdfs:subClassOf rdf:resource="DeviceReading"/>
+		<ehealth:Timestamp>2002-05-30T09:00:00</ehealth:Timestamp>
+		<ehealth:BloodGlucoseLevel>10mmol/l</ehealth:BloodGlucoseLevel>
+	</ehealth:BloodGlucoseReading>
+
+	<ehealth:Vaccination rdf:about="Vaccination">
 		<dc:Title>MMR</dc:Title>
 		<ehealth:RequiredFrequency>N/A</ehealth:RequiredFrequency>
 	</ehealth:Vaccination>
 
-	<ehealth:PatientVaccination rdf:about="patientvaccination?id=492">
+	<ehealth:PatientVaccination rdf:about="PatientVaccination">
 		<ehealth:DateOfLast>2000-09-09</ehealth:DateOfLast>
-		<ehealth:Vaccination rdf:resource="vaccination?id=478"/>
+		<ehealth:Vaccination rdf:resource="Vaccination"/>
 	</ehealth:PatientVaccination>
 
-	<ehealth:Prescription rdf:about="prescription?id=777">
-		<ehealth:PrescribedMedication rdf:resource="prescribedmedication?id=4"/>
-		<ehealth:PrescribedMedication rdf:resource="prescribedmedication?id=5"/>
-		<ehealth:PrescribedMedication rdf:resource="prescribedmedication?id=6"/>
+	<ehealth:Prescription rdf:about="Prescription">
+		<ehealth:CreationDate>2016-02-02</ehealth:CreationDate>
+		<ehealth:PrescribedMedication rdf:resource="PrescribedMedication"/>
+		<ehealth:PrescribedMedication rdf:resource="PrescribedMedication"/>
+		<ehealth:PrescribedMedication rdf:resource="PrescribedMedication"/>
 	</ehealth:Prescription>
 
-	<ehealth:Medication rdf:about="medication?id=43">
+	<ehealth:Medication rdf:about="Medication">
 		<dc:Title>Levothyroxine</dc:Title>
 	</ehealth:Medication>
 
-	<ehealth:PrescribedMedication rdf:about="prescribedmedication?id=4">
+	<ehealth:PrescribedMedication rdf:about="PrescribedMedication">
 		<ehealth:AmountPrescribed>72 tablets</ehealth:AmountPrescribed>
 		<ehealth:Dosage>150mg once a day</ehealth:Dosage>
 		<ehealth:PatientInstructions>Take tablets orally either first thing in a morning or last thing at night</ehealth:PatientInstructions>
 		<ehealth:LastIssued>2016-04-04</ehealth:LastIssued>
 		<ehealth:NextIssueDate>2016-04-05</ehealth:NextIssueDate>
 		<ehealth:ReviewDue>2016-04-06</ehealth:ReviewDue>
-		<ehealth:Medication rdf:resource="medication?id=43"/>
+		<ehealth:Medication rdf:resource="Medication"/>
 	</ehealth:PrescribedMedication>
 
-	<ehealth:MedicalCondition rdf:about="medicalcondition?id=165">
+	<ehealth:MedicalCondition rdf:about="MedicalCondition">
 		<dc:Title>Hypothyroidism</dc:Title>
 	</ehealth:MedicalCondition>
 
-	<ehealth:PatientCondition rdf:about="patientcondition?id=276">
+	<ehealth:PatientCondition rdf:about="PatientCondition">
 		<ehealth:Notes>Early stages therefore only a low dose of Thyorxine will be required, but this will increase with age until stable.</ehealth:Notes>
-		<ehealth:MedicalCondition rdf:resource="medicalcondition?id=165"/>
+		<ehealth:MedicalCondition rdf:resource="MedicalCondition"/>
 	</ehealth:PatientCondition>
 
-	<ehealth:Diagnosis rdf:about="diagnosis?id=665">
-		<ehealth:PatientCondition rdf:resource="patientcondition?id=276"></ehealth:PatientCondition>
-		<ehealth:TestResult rdf:resource="testresult?id=3"/>
+	<ehealth:Diagnosis rdf:about="Diagnosis">
+		<ehealth:PatientCondition rdf:resource="PatientCondition"></ehealth:PatientCondition>
+		<ehealth:TestResult rdf:resource="TestResult"/>
 	</ehealth:Diagnosis>
 
-	<ehealth:Operation rdf:about="operation?id=4">
+	<ehealth:Operation rdf:about="Operation">
 		<ehealth:Type>Biopsy</ehealth:Type>
 	</ehealth:Operation>
 
-	<ehealth:PatientOperation rdf:about="patientoperation?id=22">
+	<ehealth:PatientOperation rdf:about="PatientOperation">
 		<ehealth:Date>2015-07-12</ehealth:Date>
 		<ehealth:StartTime>15:00:00</ehealth:StartTime>
 		<ehealth:EndTime>16:27:00</ehealth:EndTime>
 		<ehealth:SurgeonNotes>Patient was anesthetised. Biopsy retrieved successfully with no complications</ehealth:SurgeonNotes>
-		<ehealth:Operation rdf:resource="operation?id=4"/>
+		<ehealth:Operation rdf:resource="Operation"/>
 	</ehealth:PatientOperation>
 
-	<ehealth:Hospitalisation rdf:about="hospitalisation?id=33">
+	<ehealth:Hospitalisation rdf:about="hospitalisation">
 		<ehealth:Admitted>2015-07-12</ehealth:Admitted>
 		<ehealth:Discharged>2015-07-12</ehealth:Discharged>
-		<ehealth:Reason>In patient arrived for scheduled biopsy.</ehealth:Reason>
-		<ehealth:PatientOperation rdf:resource="patientoperation?id=22"/>
+		<ehealth:Reason>In Patient arrived for scheduled biopsy.</ehealth:Reason>
+		<ehealth:PatientOperation rdf:resource="PatientOperation"/>
 	</ehealth:Hospitalisation>
 
-	<ehealth:Test rdf:about="test?id=45">
+	<ehealth:Test rdf:about="Test">
 		<ehealth:Type>TSH Blood Test</ehealth:Type>
 		<ehealth:Date>2016-10-04</ehealth:Date>
 		<ehealth:Time>10:30:00</ehealth:Time>
-		<ehealth:TestResult rdf:resource="testresult?id=3"/>
+		<ehealth:TestResult rdf:resource="TestResult"/>
 	</ehealth:Test>
 
-	<ehealth:TestResult rdf:about="testresult?id=3">
+	<ehealth:TestResult rdf:about="TestResult">
 		<ehealth:Timestamp>2002-05-30T09:00:00</ehealth:Timestamp>
 		<ehealth:FindingNotes>Low levels of TSH in blood, suggests an underactive thyroid, possibly Hypothyroidism.</ehealth:FindingNotes>
 	</ehealth:TestResult>
 
-	<ehealth:Appointment rdf:about="appointment?id=12345">
+	<ehealth:Appointment rdf:about="Appointment">
 		<ehealth:Date>2016-20-04</ehealth:Date>
 		<ehealth:Time>10:00:00</ehealth:Time>
 		<ehealth:Notes>Patient was complaining of feeling lazy. Suspected Lazyitus.</ehealth:Notes>
