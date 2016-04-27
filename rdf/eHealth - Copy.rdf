@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:dc= "http://purl.org/dc/elements/1.1/" 
+	xmlns:ehealth="http://www.example.com/ehealth#">
+
+	<rdfs:Class rdf:about="http://www.example.com/ehealth#Address">
+		<ehealth:LineOne>123</ehealth:LineOne>
+		<ehealth:LineTwo>A Street</ehealth:LineTwo>
+		<ehealth:City>Cityplace</ehealth:City>
+		<ehealth:County>Countyshire</ehealth:County>
+		<ehealth:Postcode>C171ES</ehealth:Postcode>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="http://www.example.com/ehealth#Person">
+		<ehealth:Title></ehealth:Title>
+		<ehealth:Forename></ehealth:Forename>
+		<ehealth:OtherNames></ehealth:OtherNames>
+		<ehealth:Surname></ehealth:Surname>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="http://www.example.com/ehealth#Patient">
+		<rdfs:subClassOf rdf:resource="http://www.example.com/ehealth#Person"/>
+		<ehealth:Address rdf:resource="http://www.example.com/ehealth#Address"/>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="http://www.example.com/ehealth#Gp">
+		<rdfs:subClassOf rdf:resource="http://www.example.com/ehealth#Person"/>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="http://www.example.com/ehealth#Specialist">
+		<rdfs:subClassOf rdf:resource="http://www.example.com/ehealth#Person"/>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="http://www.example.com/ehealth#Location">
+		<dc:Title>Location</dc:Title>
+		<ehealth:ContactNo></ehealth:ContactNo>
+		<ehealth:Email></ehealth:Email>
+		<ehealth:Address rdf:resource="http://www.example.com/ehealth#Address"/>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="http://www.example.com/ehealth#Surgery">
+		<rdfs:subClassOf rdf:resource="http://www.example.com/ehealth#Location"/>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="http://www.example.com/ehealth#Hospital">
+		<rdfs:subClassOf rdf:resource="http://www.example.com/ehealth#Location"/>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="http://www.example.com/ehealth#Lab">
+		<rdfs:subClassOf rdf:resource="http://www.example.com/ehealth#Location"/>
+	</rdfs:Class>
+
+
+	<!-- 
+
+	<ehealth:Device rdf:about="device">
+		<ehealth:SerialNumber></ehealth:SerialNumber>
+		<ehealth:DateRegistered></ehealth:DateRegistered>
+	</ehealth:Device>
+
+	<ehealth:ActivityMonitor rdf:about="activitymonitor?id=55">
+		<rdfs:subClassOf rdf:resource="device"/>
+	</ehealth:ActivityMonitor>
+
+	<ehealth:BloodGlucoseMonitor rdf:about="bloodglucosemonitor?id=55">
+		<rdfs:subClassOf rdf:resource="device"/>
+	</ehealth:BloodGlucoseMonitor>
+
+	<ehealth:WeighingScales rdf:about="weighingscales?id=55">
+		<rdfs:subClassOf rdf:resource="device"/>
+	</ehealth:WeighingScales>
+
+	<ehealth:Vaccination rdf:about="vaccination?id=478">
+		<dc:Title>MMR</dc:Title>
+		<ehealth:RequiredFrequency>N/A</ehealth:RequiredFrequency>
+	</ehealth:Vaccination>
+
+	<ehealth:PatientVaccination rdf:about="patientvaccination?id=492">
+		<ehealth:DateOfLast>2000-09-09</ehealth:DateOfLast>
+		<ehealth:Vaccination rdf:resource="vaccination?id=478"/>
+	</ehealth:PatientVaccination>
+
+	<ehealth:Prescription rdf:about="prescription?id=777">
+		<ehealth:PrescribedMedication rdf:resource="prescribedmedication?id=4"/>
+		<ehealth:PrescribedMedication rdf:resource="prescribedmedication?id=5"/>
+		<ehealth:PrescribedMedication rdf:resource="prescribedmedication?id=6"/>
+	</ehealth:Prescription>
+
+	<ehealth:Medication rdf:about="medication?id=43">
+		<dc:Title>Levothyroxine</dc:Title>
+	</ehealth:Medication>
+
+	<ehealth:PrescribedMedication rdf:about="prescribedmedication?id=4">
+		<ehealth:AmountPrescribed>72 tablets</ehealth:AmountPrescribed>
+		<ehealth:Dosage>150mg once a day</ehealth:Dosage>
+		<ehealth:PatientInstructions>Take tablets orally either first thing in a morning or last thing at night</ehealth:PatientInstructions>
+		<ehealth:LastIssued>2016-04-04</ehealth:LastIssued>
+		<ehealth:NextIssueDate>2016-04-05</ehealth:NextIssueDate>
+		<ehealth:ReviewDue>2016-04-06</ehealth:ReviewDue>
+		<ehealth:Medication rdf:resource="medication?id=43"/>
+	</ehealth:PrescribedMedication>
+
+	<ehealth:MedicalCondition rdf:about="medicalcondition?id=165">
+		<ehealth:Name>Hypothyroidism</ehealth:Name>
+	</ehealth:MedicalCondition>
+
+	<ehealth:PatientCondition rdf:about="patientcondition?id=276">
+		<ehealth:Notes>Early stages therefore only a low dose of Thyorxine will be required, but this will increase with age until stable.</ehealth:Notes>
+		<ehealth:MedicalCondition rdf:resource="medicalcondition?id=165"/>
+	</ehealth:PatientCondition>
+
+	<ehealth:Diagnosis rdf:about="diagnosis?id=665">
+		<ehealth:PatientCondition rdf:resource=""></ehealth:PatientCondition>
+		<ehealth:TestResult rdf:resource="testresult?id=3"/>
+	</ehealth:Diagnosis>
+
+	<ehealth:Operation rdf:about="operation?id=4">
+		<ehealth:Type>Biopsy</ehealth:Type>
+	</ehealth:Operation>
+
+	<ehealth:PatientOperation rdf:about="patientoperation?id=22">
+		<ehealth:Date>2015-07-12</ehealth:Date>
+		<ehealth:StartTime>15:00:00</ehealth:StartTime>
+		<ehealth:EndTime>16:27:00</ehealth:EndTime>
+		<ehealth:SurgeonNotes>Patient was anesthetised. Biopsy retrieved successfully with no complications</ehealth:SurgeonNotes>
+		<ehealth:Operation rdf:resource="operation?id=4"/>
+	</ehealth:PatientOperation>
+
+	<ehealth:Hospitalisation rdf:about="hospitalisation?id=33">
+		<ehealth:Admitted>2015-07-12</ehealth:Admitted>
+		<ehealth:Discharged>2015-07-12</ehealth:Discharged>
+		<ehealth:Reason>In patient arrived for scheduled biopsy.</ehealth:Reason>
+		<ehealth:PatientOperation rdf:resource="patientoperation?id=22"/>
+	</ehealth:Hospitalisation>
+
+	<ehealth:Test rdf:about="http://example.com/test?id=45">
+		<ehealth:Type>TSH Blood Test</ehealth:Type>
+		<ehealth:Date>2016-10-04</ehealth:Date>
+		<ehealth:Time>10:30:00</ehealth:Time>
+		<ehealth:TestResult rdf:resource="testresult?id=3"/>
+	</ehealth:Test>
+
+	<ehealth:TestResult rdf:about="testresult?id=3">
+		<ehealth:Timestamp>2002-05-30T09:00:00</ehealth:Timestamp>
+		<ehealth:FindingNotes>Low levels of TSH in blood, suggests an underactive thyroid, possibly Hypothyroidism.</ehealth:FindingNotes>
+	</ehealth:TestResult>
+
+	<ehealth:Appointment rdf:about="appointment?id=12345">
+		<ehealth:Date>2016-20-04</ehealth:Date>
+		<ehealth:Time>10:00:00</ehealth:Time>
+		<ehealth:Notes>Patient was complaining of feeling lazy. Suspected Lazyitus.</ehealth:Notes>
+	</ehealth:Appointment> -->
+
+</rdf:RDF>

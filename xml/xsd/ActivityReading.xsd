@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ActivityReading">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Timestamp" type="xs:dateTime" />
+        <xs:element name="StepCount" type="xs:unsignedInt" />
+        <xs:element name="AverageBpm" type="xs:unsignedByte" />
+        <xs:element name="Duration" type="xs:duration" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

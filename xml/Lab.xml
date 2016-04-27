@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Lab>
+	<Name>The Results Lab</Name>
+	<ContactInfo>
+		<Email>contact@theresultslab.co.uk</Email>
+		<ContactNumber>01484 111223</ContactNumber>
+	</ContactInfo>
+	<Address>
+		<LineOne>The Results Lab</LineOne>
+		<LineTwo>Somewhere In</LineTwo>
+		<City>Huddersfield</City>
+		<County>West Yorksire</County>
+		<Postcode>HD6 5LJ</Postcode>
+	</Address>
+	<Test>
+		<Type>TSH Blood Test</Type>
+		<Date>2016-10-04</Date>
+		<Time>10:30:00</Time>
+		<TestResult>
+			<Timestamp>2002-05-30T09:00:00</Timestamp>
+			<FindingNotes>Low levels of TSH in blood, suggests an underactive thyroid, possibly Hypothyroidism.</FindingNotes>
+		</TestResult>
+	</Test>
+	<Test>
+		<Type>Liver Function Test</Type>
+		<Date>2015-10-04</Date>
+		<Time>10:30:00</Time>
+		<TestResult>
+			<Timestamp>2002-05-30T09:00:00</Timestamp>
+			<FindingNotes>Slightly raised levels of Billirubin in blood. No cause for alarm, but suggested re-test in 6 months time.</FindingNotes>
+		</TestResult>
+	</Test>
+</Lab>

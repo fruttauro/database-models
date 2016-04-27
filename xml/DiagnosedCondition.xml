@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DiagnosedCondition>
+	<MedicalCondition>
+		<Name>Hypothyroidism</Name>
+	</MedicalCondition>
+	<Notes>Early stages therefore only a low dose of Thyorxine will be required, but this will increase with age until stable.</Notes>
+</DiagnosedCondition>

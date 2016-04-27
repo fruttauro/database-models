@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActivityMonitor>
+	<SerialNumber>A-DEVICE-123</SerialNumber>
+	<DateRegistered>2015-09-12</DateRegistered>
+	<ActivityReading>
+		<StepCount>14568</StepCount>
+		<AverageBpm>83</AverageBpm>
+		<Duration>PT1H</Duration>
+		<Timestamp>2002-05-30T09:00:00</Timestamp>
+	</ActivityReading>
+	<ActivityReading>
+		<StepCount>200</StepCount>
+		<AverageBpm>68</AverageBpm>
+		<Duration>PT7M</Duration>
+		<Timestamp>2002-05-30T09:00:00</Timestamp>
+	</ActivityReading>
+</ActivityMonitor>

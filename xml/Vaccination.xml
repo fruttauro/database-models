@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RoutineVaccination>
+	<Vaccination>
+		<Name>MMR</Name>
+		<FrequencyRequired>N/A</FrequencyRequired>
+	</Vaccination>
+	<DateOfLast>2000-09-09</DateOfLast>
+</RoutineVaccination>

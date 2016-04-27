@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Patient">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Name">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Title" type="xs:string" />
+              <xs:element name="Forename" type="xs:string" />
+              <xs:element name="OtherNames" type="xs:string" />
+              <xs:element name="Surname" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ContactInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Email" type="xs:string" />
+              <xs:element name="ContactNumber" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Address">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LineOne" type="xs:string" />
+              <xs:element name="LineTwo" type="xs:string" />
+              <xs:element name="City" type="xs:string" />
+              <xs:element name="County" type="xs:string" />
+              <xs:element name="Postcode" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Prescription">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CreationDate" type="xs:date" />
+              <xs:element name="PrescribedMedication">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Medication">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Name" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="AmountPrescribed" type="xs:string" />
+                    <xs:element name="Dosage" type="xs:string" />
+                    <xs:element name="PatientInstructions" type="xs:string" />
+                    <xs:element name="LastIssued" type="xs:date" />
+                    <xs:element name="NextIssueDate" type="xs:date" />
+                    <xs:element name="ReviewDue" type="xs:date" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="repeat" type="xs:boolean" use="required" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element maxOccurs="unbounded" name="Appointment">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Date" type="xs:date" />
+              <xs:element name="Time" type="xs:time" />
+              <xs:element name="Notes" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DiagnosedCondition">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MedicalCondition">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Notes" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RoutineVaccination">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Vaccination">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name" type="xs:string" />
+                    <xs:element name="FrequencyRequired" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="DateOfLast" type="xs:date" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Test">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Type" type="xs:string" />
+              <xs:element name="Date" type="xs:date" />
+              <xs:element name="Time" type="xs:time" />
+              <xs:element name="TestResult">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Timestamp" type="xs:dateTime" />
+                    <xs:element name="FindingNotes" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="WeighingScales">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SerialNumber" type="xs:string" />
+              <xs:element name="DateRegistered" type="xs:date" />
+              <xs:element maxOccurs="unbounded" name="WeightReading">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Timestamp" type="xs:dateTime" />
+                    <xs:element name="WeightKg" type="xs:unsignedShort" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ActivityMonitor">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SerialNumber" type="xs:string" />
+              <xs:element name="DateRegistered" type="xs:date" />
+              <xs:element maxOccurs="unbounded" name="ActivityReading">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="StepCount" type="xs:unsignedInt" />
+                    <xs:element name="AverageBpm" type="xs:unsignedByte" />
+                    <xs:element name="Duration" type="xs:duration" />
+                    <xs:element name="Timestamp" type="xs:dateTime" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PatientOperation">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Operation">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Type" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Date" type="xs:date" />
+              <xs:element name="StartTime" type="xs:time" />
+              <xs:element name="EndTime" type="xs:time" />
+              <xs:element name="SurgeonNotes" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

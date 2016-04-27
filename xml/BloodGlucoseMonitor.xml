@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BloodGlucoseMonitor>
+	<SerialNumber>A-DEVICE-432</SerialNumber>
+	<DateRegistered>2015-09-12</DateRegistered>
+	<BloodGlucoseReading>
+		<Timestamp>2002-05-30T09:00:00</Timestamp>
+		<BloodGlucoseLevel>10mmol/l</BloodGlucoseLevel>
+	</BloodGlucoseReading>
+	<BloodGlucoseReading>
+		<Timestamp>2002-05-30T09:00:00</Timestamp>
+		<BloodGlucoseLevel>6mmol/l</BloodGlucoseLevel>
+	</BloodGlucoseReading>
+</BloodGlucoseMonitor>

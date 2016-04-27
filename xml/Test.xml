@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Test>
+	<Type>TSH Blood Test</Type>
+	<Date>2016-10-04</Date>
+	<Time>10:30:00</Time>
+	<TestResult>
+		<Timestamp>2002-05-30T09:00:00</Timestamp>
+		<FindingNotes>Low levels of TSH in blood, suggests an underactive thyroid, possibly Hypothyroidism.</FindingNotes>
+	</TestResult>
+</Test>

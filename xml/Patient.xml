@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patient>
+  <Name>
+    <Title>Mr.</Title>
+    <Forename>Daniel</Forename>
+    <OtherNames>Marco</OtherNames>
+    <Surname>Fruttauro</Surname>
+  </Name>
+  <ContactInfo>
+    <Email>fruttauro@gmail.com</Email>
+    <ContactNumber>07510941237</ContactNumber>
+  </ContactInfo>
+  <Address>
+    <LineOne>46a Millmoor Road</LineOne>
+    <LineTwo>Meltham, Holmfirth</LineTwo>
+    <City>Huddersfield</City>
+    <County>West Yorkshire</County>
+    <Postcode>HD95JY</Postcode>
+  </Address>
+  <Prescription repeat="true">
+    <CreationDate>2016-02-02</CreationDate>
+    <PrescribedMedication>
+      <Medication>
+        <Name>Levothyroxine</Name>
+      </Medication>
+      <AmountPrescribed>72 tablets</AmountPrescribed>
+      <Dosage>150mg once a day</Dosage>
+      <PatientInstructions>Take tablets orally either first thing in a morning or last thing at night</PatientInstructions>
+      <LastIssued>2016-04-04</LastIssued>
+      <NextIssueDate>2016-04-05</NextIssueDate>
+      <ReviewDue>2016-04-06</ReviewDue>
+    </PrescribedMedication>
+  </Prescription>
+  <Appointment>
+    <Date>2016-04-04</Date>
+    <Time>10:00:00</Time>
+    <Notes>Patient was complaining of feeling lazy. Suspected Lazyitus.</Notes>
+  </Appointment>
+  <Appointment>
+    <Date>2016-04-04</Date>
+    <Time>11:30:00</Time>
+    <Notes>Patient was complaining of feeling even lazier. Told patient to book test with nurse.</Notes>
+  </Appointment>
+  <DiagnosedCondition>
+    <MedicalCondition>
+      <Name>Hypothyroidism</Name>
+    </MedicalCondition>
+    <Notes>Early stages therefore only a low dose of Thyorxine will be required, but this will increase with age until stable.</Notes>
+  </DiagnosedCondition>
+  <RoutineVaccination>
+    <Vaccination>
+      <Name>MMR</Name>
+      <FrequencyRequired>N/A</FrequencyRequired>
+    </Vaccination>
+    <DateOfLast>2000-09-09</DateOfLast>
+  </RoutineVaccination>
+  <Test>
+    <Type>TSH Blood Test</Type>
+    <Date>2016-10-04</Date>
+    <Time>10:30:00</Time>
+    <TestResult>
+      <Timestamp>2002-05-30T09:00:00</Timestamp>
+      <FindingNotes>Low levels of TSH in blood, suggests an underactive thyroid, possibly Hypothyroidism.</FindingNotes>
+    </TestResult>
+  </Test>
+  <WeighingScales>
+    <SerialNumber>A-DEVICE-234</SerialNumber>
+    <DateRegistered>2015-09-12</DateRegistered>
+    <WeightReading>
+      <Timestamp>2002-05-30T09:00:00</Timestamp>
+      <WeightKg>86</WeightKg>
+    </WeightReading>
+    <WeightReading>
+      <Timestamp>2002-05-30T09:00:00</Timestamp>
+      <WeightKg>87</WeightKg>
+    </WeightReading>
+  </WeighingScales>
+  <ActivityMonitor>
+    <SerialNumber>A-DEVICE-123</SerialNumber>
+    <DateRegistered>2015-09-12</DateRegistered>
+    <ActivityReading>
+      <StepCount>14568</StepCount>
+      <AverageBpm>83</AverageBpm>
+      <Duration>PT1H</Duration>
+      <Timestamp>2002-05-30T09:00:00</Timestamp>
+    </ActivityReading>
+    <ActivityReading>
+      <StepCount>200</StepCount>
+      <AverageBpm>68</AverageBpm>
+      <Duration>PT7M</Duration>
+      <Timestamp>2002-05-30T09:00:00</Timestamp>
+    </ActivityReading>
+  </ActivityMonitor>
+  <PatientOperation>
+    <Operation>
+      <Type>Stomach Tissue Biopsy</Type>
+    </Operation>
+    <Date>2015-07-12</Date>
+    <StartTime>15:00:00</StartTime>
+    <EndTime>16:27:00</EndTime>
+    <SurgeonNotes>Patient was anesthetised. Biopsy retrieved successfully with no complications</SurgeonNotes>
+  </PatientOperation>
+</Patient>

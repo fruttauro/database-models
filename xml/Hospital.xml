@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Hospital>
+  <Name>The Hospital</Name>
+  <ContactInfo>
+    <Email>help@thehospital.co.uk</Email>
+    <ContactNumber>01484777333</ContactNumber>
+  </ContactInfo>
+  <Address>
+    <LineOne>The Hospital</LineOne>
+    <LineTwo></LineTwo>
+    <City>Huddersfield</City>
+    <County>West Yorksire</County>
+    <Postcode>HD6 5LJ</Postcode>
+  </Address>
+  <Specialist>
+    <Name>
+      <Title>Dr.</Title>
+      <Forename>Surgeon</Forename>
+      <OtherNames></OtherNames>
+      <Surname>Guy</Surname>
+    </Name>
+    <ContactInfo>
+      <Email>SurgeonGuy@somethingsurgery.co.uk</Email>
+      <ContactNumber>01484350222</ContactNumber>
+    </ContactInfo>
+  </Specialist>
+  <Specialist>
+    <Name>
+      <Title>Dr.</Title>
+      <Forename>Another</Forename>
+      <OtherNames></OtherNames>
+      <Surname>Guy</Surname>
+    </Name>
+    <ContactInfo>
+      <Email>AnotherGuy@somethingsurgery.co.uk</Email>
+      <ContactNumber>01484450222</ContactNumber>
+    </ContactInfo>
+  </Specialist>
+</Hospital>

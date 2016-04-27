@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Prescription repeat="true">
+  <CreationDate>2016-02-02</CreationDate>
+  <PrescribedMedication>
+    <Medication>
+      <Name>Levothyroxine</Name>
+    </Medication>
+    <AmountPrescribed>72 tablets</AmountPrescribed>
+    <Dosage>150mg once a day</Dosage>
+    <PatientInstructions>Take tablets orally either first thing in a morning or last thing at night</PatientInstructions>
+    <LastIssued>2016-04-04</LastIssued>
+    <NextIssueDate>2016-04-05</NextIssueDate>
+    <ReviewDue>2016-04-06</ReviewDue>
+  </PrescribedMedication>
+</Prescription>

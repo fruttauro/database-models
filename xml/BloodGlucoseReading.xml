@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BloodGlucoseReading>
+	<Timestamp>2002-05-30T09:00:00</Timestamp>
+	<BloodGlucoseLevel>10mmol/l</BloodGlucoseLevel>
+</BloodGlucoseReading>

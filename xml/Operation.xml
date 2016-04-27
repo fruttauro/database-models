@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PatientOperation>
+	<Operation>
+		<Type>Stomach Tissue Biopsy</Type>
+	</Operation>
+	<Date>2015-07-12</Date>
+	<StartTime>15:00:00</StartTime>
+	<EndTime>16:27:00</EndTime>
+	<SurgeonNotes>Patient was anesthetised. Biopsy retrieved successfully with no complications</SurgeonNotes>
+</PatientOperation>
