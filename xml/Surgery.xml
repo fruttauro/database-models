@@ -56,12 +56,12 @@
 				</PrescribedMedication>
 			</Prescription>
 			<Appointment>
-				<Date>2016-20-04</Date>
+				<Date>2016-04-04</Date>
 				<Time>10:00:00</Time>
 				<Notes>Patient was complaining of feeling lazy. Suspected Lazyitus.</Notes>
 			</Appointment>
 			<Appointment>
-				<Date>2016-27-04</Date>
+				<Date>2016-04-04</Date>
 				<Time>11:30:00</Time>
 				<Notes>Patient was complaining of feeling even lazier. Told patient to book test with nurse.</Notes>
 			</Appointment>
